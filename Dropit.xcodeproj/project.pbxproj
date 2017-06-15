@@ -13,6 +13,7 @@
 		0A3187B51EF32E7300CB090A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A3187B31EF32E7300CB090A /* Main.storyboard */; };
 		0A3187B71EF32E7300CB090A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A3187B61EF32E7300CB090A /* Assets.xcassets */; };
 		0A3187BA1EF32E7300CB090A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A3187B81EF32E7300CB090A /* LaunchScreen.storyboard */; };
+		0AF7A5851EF333ED00641513 /* DropitBehavior.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AF7A5841EF333ED00641513 /* DropitBehavior.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		0A3187B61EF32E7300CB090A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A3187B91EF32E7300CB090A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A3187BB1EF32E7300CB090A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0AF7A5831EF333ED00641513 /* DropitBehavior.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropitBehavior.h; sourceTree = "<group>"; };
+		0AF7A5841EF333ED00641513 /* DropitBehavior.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropitBehavior.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +62,8 @@
 			isa = PBXGroup;
 			children = (
 				0A3187B31EF32E7300CB090A /* Main.storyboard */,
+				0AF7A5831EF333ED00641513 /* DropitBehavior.h */,
+				0AF7A5841EF333ED00641513 /* DropitBehavior.m */,
 				0A3187B01EF32E7300CB090A /* DropitViewController.h */,
 				0A3187B11EF32E7300CB090A /* DropitViewController.m */,
 				0A3187B61EF32E7300CB090A /* Assets.xcassets */,
@@ -152,6 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A3187B21EF32E7300CB090A /* DropitViewController.m in Sources */,
+				0AF7A5851EF333ED00641513 /* DropitBehavior.m in Sources */,
 				0A3187AF1EF32E7300CB090A /* AppDelegate.m in Sources */,
 				0A3187AC1EF32E7300CB090A /* main.m in Sources */,
 			);
@@ -312,6 +318,7 @@
 				0A3187C01EF32E7300CB090A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
