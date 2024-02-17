@@ -11,7 +11,7 @@
 #import "BezierPathView.h"
 
 @interface DropitViewController () <UIDynamicAnimatorDelegate>
-@property (weak, nonatomic) IBOutlet BezierPathView *gameView;
+@property (strong, nonatomic) BezierPathView *gameView;
 @property (strong, nonatomic) UIDynamicAnimator *animator;
 @property (strong, nonatomic) DropitBehavior *dropitBehavior;
 @property (strong, nonatomic) UIAttachmentBehavior *attachment;
@@ -21,6 +21,35 @@
 @implementation DropitViewController
 
 static const CGSize DROP_SIZE = { 40, 40 };
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    self.view.backgroundColor = UIColor.systemBackgroundColor;
+    [self.view addSubview:self.gameView];
+
+    [NSLayoutConstraint activateConstraints:@[
+        [self.gameView.topAnchor constraintEqualToAnchor: self.view.topAnchor],
+        [self.gameView.leadingAnchor constraintEqualToAnchor: self.view.leadingAnchor],
+        [self.gameView.trailingAnchor constraintEqualToAnchor: self.view.trailingAnchor],
+        [self.gameView.bottomAnchor constraintEqualToAnchor: self.view.bottomAnchor],
+    ]];
+
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];
+    [self.gameView addGestureRecognizer:tap];
+
+    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(pan:)];
+    [self.gameView addGestureRecognizer:pan];
+}
+
+- (BezierPathView *)gameView
+{
+    if (!_gameView) {
+        _gameView = BezierPathView.new;
+        _gameView.translatesAutoresizingMaskIntoConstraints = NO;
+    }
+    return _gameView;
+}
 
 - (UIDynamicAnimator *)animator
 {
@@ -94,11 +123,12 @@ static const CGSize DROP_SIZE = { 40, 40 };
 }
 
 
-- (IBAction)tap:(UITapGestureRecognizer *)sender {
+- (void)tap:(UITapGestureRecognizer *)sender {
     [self drop];
 }
-- (IBAction)pan:(UIPanGestureRecognizer *)sender {
-    
+
+- (void)pan:(UIPanGestureRecognizer *)sender {
+
     CGPoint gesturePoint = [sender locationInView:self.view];
     
     if (sender.state == UIGestureRecognizerStateBegan) {

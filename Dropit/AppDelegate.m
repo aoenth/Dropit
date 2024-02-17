@@ -19,9 +19,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     CGRect frame = UIScreen.mainScreen.bounds;
-    NSBundle *bundle = [NSBundle mainBundle];
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:bundle];
-    UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"MainStoryboard"];
+    UIViewController *vc = DropitViewController.new;
 
     UIWindow *window = [[MBFingerTipWindow alloc] initWithFrame:frame];
     window.rootViewController = vc;
