@@ -26,6 +26,7 @@ static const CGSize DROP_SIZE = { 40, 40 };
 {
     [super viewDidLoad];
     self.view.backgroundColor = UIColor.systemBackgroundColor;
+
     [self.view addSubview:self.gameView];
 
     [NSLayoutConstraint activateConstraints:@[
@@ -47,6 +48,7 @@ static const CGSize DROP_SIZE = { 40, 40 };
     if (!_gameView) {
         _gameView = BezierPathView.new;
         _gameView.translatesAutoresizingMaskIntoConstraints = NO;
+        _gameView.backgroundColor = UIColor.systemBackgroundColor;
     }
     return _gameView;
 }
