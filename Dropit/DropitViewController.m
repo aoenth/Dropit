@@ -71,16 +71,16 @@ static const CGSize DROP_SIZE = { 40, 40 };
 {
     [UIView animateWithDuration:1.0
                      animations:^{
-                         for (UIView *drop in dropToRemove) {
-                             int x = (arc4random()%(int)(self.gameView.bounds.size.width * 5)) - (int)self.gameView.bounds.size.width * 2;
-                             int y = self.gameView.bounds.size.height;
-                             drop.center = CGPointMake(x, -y);
-                             
-                         }
-                     }
+        for (UIView *drop in dropToRemove) {
+            int x = (arc4random()%(int)(self.gameView.bounds.size.width * 5)) - (int)self.gameView.bounds.size.width * 2;
+            int y = self.gameView.bounds.size.height;
+            drop.center = CGPointMake(x, -y);
+
+        }
+    }
                      completion:^(BOOL finished) {
-                         [dropToRemove makeObjectsPerformSelector:@selector(removeFromSuperview)];
-                     }];
+        [dropToRemove makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    }];
 }
 
 
@@ -157,18 +157,5 @@ static const CGSize DROP_SIZE = { 40, 40 };
     }
     return [UIColor blackColor];
 }
-
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-}
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 
 @end
