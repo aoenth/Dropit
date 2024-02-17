@@ -7,8 +7,8 @@
 //
 
 #import "AppDelegate.h"
-#import <Fingertips/MBFingerTipWindow.h>
 #import "DropitViewController.h"
+@import Fingertips;
 
 @interface AppDelegate ()
 
@@ -21,7 +21,7 @@
     CGRect frame = UIScreen.mainScreen.bounds;
     UIViewController *vc = DropitViewController.new;
 
-    UIWindow *window = [[MBFingerTipWindow alloc] initWithFrame:frame];
+    MBXFingerTipWindow *window = [[MBXFingerTipWindow alloc] initWithFrame:frame];
     window.rootViewController = vc;
     [window makeKeyAndVisible];
 
