@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import <Fingertips/MBFingerTipWindow.h>
+#import "DropitViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,11 +18,16 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    UIViewController *vc = self.window.rootViewController;
-    CGRect frame = [[UIScreen mainScreen] bounds];
-    self.window = [[MBFingerTipWindow alloc] initWithFrame:frame];
-    self.window.rootViewController = vc;
-    [self.window makeKeyAndVisible];
+    CGRect frame = UIScreen.mainScreen.bounds;
+    NSBundle *bundle = [NSBundle mainBundle];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:bundle];
+    UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"MainStoryboard"];
+
+    UIWindow *window = [[MBFingerTipWindow alloc] initWithFrame:frame];
+    window.rootViewController = vc;
+    [window makeKeyAndVisible];
+
+    self.window = window;
     return YES;
 }
 @end
